@@ -20,10 +20,18 @@
    <!-- Application user interface goes here. -->
    <h1>Example Electron Application Template v1.0</h1>
 
+   <!-- Necessary evil to get JS files loading correctly.
+        See http://stackoverflow.com/questions/32621988/electron-jquery-is-not-defined -->
+   <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
    <!-- Additional Javascript gets included here. -->
-   <script src="./js/jquery-3.1.1.min.js"></script>
+   <script src="./js/jquery-3.2.0.min.js"></script>
    <script src="./js/sugar-2.0.2.min.js"></script>
    <script src="./js/bootstrap-3.3.7.min.js"></script>
    <script src="./js/application.js"></script>
+
+   <!-- Necessary evil to get JS files loading correctly.
+        See earlier comment for more details -->
+   <script>if (window.module) module = window.module;</script>
 </body>
 </html>
